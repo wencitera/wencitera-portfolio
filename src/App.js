@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import { theme } from './static/Theme';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import AboutMe from './components/AboutMe';
+import Experience from './components/Experience';
+import Proyects from './components/Proyects';
+import Contact from './components/Contact';
+import Knowledge from './components/Knowledge';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline/>
+      <NavBar />
+      <Router>
+        <Switch>
+          <Route path="/sobremi">
+            <AboutMe />
+          </Route>
+          <Route path="/conocimientos">
+            <Knowledge />
+          </Route>
+          <Route path="/proyectos">
+            <Proyects />
+          </Route>
+          <Route path="/experiencia">
+            <Experience />
+          </Route>
+          <Route path="/contacto">
+            <Contact />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
 
