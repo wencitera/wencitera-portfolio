@@ -9,9 +9,16 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginLeft: "5rem",
-    maxWidth: 600,
+    flexGrow: 1,
+    color: theme.palette.secondary.main,
     height: '100vh',
+    alignItems: "flex-start",
+    justifyContent: 'center',
+    width: "90vw",
+    display: 'flex',
+    [theme.breakpoints.up('sm')]:{
+      marginLeft: "5rem"
+    }
   },
   button: {
     marginTop: theme.spacing(1),
@@ -20,13 +27,15 @@ const useStyles = makeStyles((theme) => ({
   actionsContainer: {
     marginBottom: theme.spacing(2),
   },
-  stepper:{
-    justifyContent: 'center',
+  stepper: {
     backgroundColor: theme.palette.primary.main,
+    [theme.breakpoints.up('sm')]:{
+      width: "50vw" 
+    }
   },
-  text:{
-      fontSize: "1rem",
-      color: theme.palette.secondary.main,
+  text: {
+    fontSize: "1rem",
+    color: theme.palette.secondary.main,
   }
 }));
 
@@ -63,32 +72,30 @@ export default function Experience() {
 
 
   return (
+    
     <div className={classes.root}>
-    Working :P
-      <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
+      <Stepper alternativeLabel className={classes.stepper} activeStep={activeStep} orientation="horizontal">
         {steps.map((label, index) => (
           <Step key={label} >
-            <StepLabel><Typography color="secondary"><b>{label}</b></Typography></StepLabel>
+            <StepLabel>{label}</StepLabel>
             <StepContent>
-              <Typography color="secondary">{getStepContent(index)}</Typography>
+              <Typography>{getStepContent(index)}</Typography>
               <div className={classes.actionsContainer}>
                 <div>
                   <Button
-                    variant="outlined"
-                    color="secondary"
                     disabled={activeStep === 0}
                     onClick={handleBack}
                     className={classes.button}
                   >
-                    Atras
+                    Back
                   </Button>
                   <Button
-                    variant="outlined"
-                    color="secondary"
+                    variant="contained"
+                    color="primary"
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    Siguiente
+                    Next
                   </Button>
                 </div>
               </div>

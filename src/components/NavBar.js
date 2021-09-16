@@ -1,6 +1,6 @@
 import React from 'react'
 import { AppBar, IconButton, makeStyles } from '@material-ui/core';
-import AccountTreeIcon from '@material-ui/icons/AccountTree';
+//import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import WorkIcon from '@material-ui/icons/Work';
 import MailIcon from '@material-ui/icons/Mail';
 import HomeIcon from '@material-ui/icons/Home';
@@ -54,9 +54,9 @@ export default function NavBar() {
             <IconButton href='/conocimientos' className={classes.button}>
                 <BookIcon fontSize="large" />
             </IconButton>
-            <IconButton href='/proyectos' className={classes.button}>
+            {/*<IconButton href='/proyectos' className={classes.button}>
                 <AccountTreeIcon fontSize="large" />
-            </IconButton>
+        </IconButton>*/}
             <IconButton href='/experiencia' className={classes.button}>
                 <WorkIcon fontSize="large" />
             </IconButton>
