@@ -1,4 +1,4 @@
-import { Backdrop, IconButton, ImageList, ImageListItem, ImageListItemBar, makeStyles, Modal, Typography, Zoom } from '@material-ui/core';
+import { Backdrop,  ImageList, ImageListItem, makeStyles, Modal, Typography, Zoom } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
 import CsharpIcon from '../assets/csharp.svg';
 import ReactIcon from '../assets/ReactIcon.svg';
@@ -7,7 +7,7 @@ import PythonIcon from '../assets/PythonIcon.svg';
 import DatabaseIcon from '../assets/DatabaseIcon.svg';
 import HtmlIcon from '../assets/HtmlIcon.svg';
 import CssIcon from '../assets/CssIcon.svg';
-import InfoIcon from '@material-ui/icons/Info'
+
 
 
 const itemData = [
@@ -116,15 +116,18 @@ const useStyles = makeStyles((theme) => ({
         margin: "0 auto",
         height: 180,
         width: "auto",
-        [theme.breakpoints.down('md')]:{
+        filter: "invert(72%) sepia(99%) saturate(1551%) hue-rotate(86deg) brightness(100%) contrast(88%)",
+        [theme.breakpoints.up('sm')]:{
+            height: 160,
+        },
+        [theme.breakpoints.down('sm')]:{
             height: 140,
         },
-        '&:before': {
-            filter: 'invert(0%) sepia(4%) saturate(0%) hue-rotate(144deg) brightness(92%) contrast(100%)'
-        },
-        filter: "invert(72%) sepia(99%) saturate(1551%) hue-rotate(86deg) brightness(100%) contrast(88%)",
+    },
+    image_animation:{
         '&:hover': {
-            animation: `$shine 1s infinite`
+            animation: `$shine 1s infinite`,
+            cursor: 'help',
         }
     },
     "@keyframes shine": {
@@ -132,8 +135,6 @@ const useStyles = makeStyles((theme) => ({
         "50%": { filter: "invert(59%) sepia(63%) saturate(426%) hue-rotate(101deg) brightness(113%) contrast(108%)" }
     },
 }))
-
-
 
 export default function Knowledge() {
     const classes = useStyles();
@@ -192,18 +193,10 @@ export default function Knowledge() {
 
     function IconGallery(props){
         return(
-        <ImageList rowHeight={180} className={classes.imageList} cols={props.cols}>
+        <ImageList rowHeight={180} cols={props.cols}>
                 {itemData.map((item, index) => (
                     <ImageListItem key={index}>
-                        <img className={classes.image} src={item.image} onClick={() => handleOpen(index)} alt={item} />
-                        <ImageListItemBar
-                            className={classes.itembar}
-                            actionIcon={
-                                <IconButton className={classes.icon} onClick={() => handleOpen(index)}>
-                                    <InfoIcon />
-                                </IconButton>
-                            }
-                        />
+                        <img className={`${classes.image} ${classes.image_animation}`} src={item.image} onClick={() => handleOpen(index)} alt={item} />
                         {modalWindow(item, index)}
                     </ImageListItem>
                 ))}
@@ -223,33 +216,3 @@ export default function Knowledge() {
     )
 }
 
-/*
-<Grid container direction="column">
-                    <Grid item>
-                        <Typography className={classes.title}><u>Técnologías</u></Typography>
-                    </Grid>
-                    <Grid item>
-                        <Typography className={classes.body}>Jira, Trello, GitHub, GitLab, BitBucket, Filezilla, Postman</Typography>
-                    </Grid>
-                </Grid>
-<Grid item xs>
-                <Grid container direction="column">
-                    <Grid item xs>
-                        <Typography className={classes.title}><u>Frameworks</u></Typography>
-                    </Grid>
-                    <Grid item xs>
-                        <Typography className={classes.body}>React, Node.js, Discord.js, Bootstrap, Material-UI, .NET, Flask, SQL Alchemy</Typography>
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid item xs>
-                <Grid container direction="column">
-                    <Grid item>
-                        <Typography className={classes.title}><u>Lenguajes</u></Typography>
-                    </Grid>
-                    <Grid item>
-                        <Typography className={classes.body}>C#, Python, Javascript, HTML, CSS, SQL (SQL Server, PostgreSQL, MySQL)</Typography>
-                    </Grid>
-                </Grid>
-            </Grid>
-*/
