@@ -55,12 +55,13 @@ export default function Contact() {
                 {
                     socialMedia.map((social, index) =>
                         <ListItem key={index} className={classes.list}>
+                            <a className={classes.text} href={social.url}>
                             <ListItemAvatar>
                                 <Avatar className={classes.icon}>
                                     {social.logo}
                                 </Avatar>
                             </ListItemAvatar>
-                            <a className={classes.text} href={social.url}><ListItemText primary={social.name} /></a>
+                            <ListItemText primary={social.name} /></a>
                         </ListItem>
                     )
                 }

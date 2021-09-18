@@ -54,7 +54,7 @@ export default function AboutMe() {
                         </Grid>
                         <Grid item xs>
                             <Typography className={classes.textbody}>
-                                Bienvenido a mi porftolio, mi nombre es Wenceslao y soy desarrollador front-end y back-end.<br/>
+                                Bienvenido a mi porftolio, mi nombre es Wenceslao y soy desarrollador back-end y front-end.<br/>
                                 Me apasiona mucho la programación ya que a mi parecer hoy en día todos podemos programar pero nos diferenciamos
                                 en la calidad de nuestro código, entendiendo cómo funciona, respetando las bases de la Programacion Orientada a Objetos, 
                                 realizando la abstracción de la realidad, planteando una planificación para luego resolver el problema. <br/>
@@ -69,4 +69,3 @@ export default function AboutMe() {
         </div>
     )
 }
-//WEN LA OCNCHA ARREGLA EL RESPONSIVE DE LA LISTA DE LOGOS, ICONOS CON LINK EN CONTACTO
