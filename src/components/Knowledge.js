@@ -1,6 +1,6 @@
 import { Backdrop, Grid, makeStyles, Modal, Typography, Zoom } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
-import { SiCsharp, SiJavascript, SiReact, SiCss3, SiHtml5, SiPython } from 'react-icons/si'
+import { SiCsharp, SiJavascript, SiReact, SiCss3, SiHtml5, SiPython, SiNodeDotJs, SiMaterialUi, SiBootstrap } from 'react-icons/si'
 import { HiDatabase } from 'react-icons/hi'
 
 const itemData = [
@@ -8,50 +8,61 @@ const itemData = [
         title: "C#",
         alt: "Icono C#",
         image: <SiCsharp />,
-        stars: "⭐⭐⭐⭐⭐",
         description: "Es mi lenguaje de programación nativo, con el cual desarrollé mis primeras experiencias. Trabajé con .NET desarrollando principalmente back-end"
     },
     {
         title: "JavaScript",
         alt: "Icono Js",
         image: <SiJavascript />,
-        stars: "⭐⭐⭐⭐",
         description: "Mi segundo lenguaje más utilizado para front y back. Trabajé con React.js Discord.js y Node.js"
     },
     {
         title: "Python",
         alt: "Icono Python",
         image: <SiPython />,
-        stars: "⭐⭐⭐",
         description: "Otra elección para desarrollo de backend, me agrada el dinamismo que posee. Trabajé con SQL Alchemy y Flask"
     },
     {
         title: "React.js",
         alt: "Icono React",
         image: <SiReact />,
-        stars: "⭐⭐⭐⭐",
         description: "Este portfolio está hecho con React. Es mi preferencia para realizar front-end"
     },
     {
         title: "HTML 5",
         alt: "Icono html",
         image: <SiHtml5 />,
-        stars: "⭐⭐⭐",
         description: "Poseo conocimientos básicos en cuanto a HTML, tengo mucho apoyo de frameworks al igual que en CSS"
     },
     {
         title: "CSS",
         alt: "Icono css",
         image: <SiCss3 />,
-        stars: "⭐⭐",
         description: "Mis conocimientos sobre CSS son básicos, uso de apoyo frameworks como Bootstrap y Material-UI"
     },
     {
         title: "Base de Datos",
         alt: "Icono DB",
         image: <HiDatabase />,
-        stars: "⭐⭐⭐",
         description: "No poseo mucha experiencia como Administrador de Bases de Datos, pero estoy preparado para afrontar un desafío. Trabajé con PostgreSQL, MySQL y SQL Server"
+    },
+    {
+        title: "Node.js",
+        alt: "Icono nodejs",
+        image: <SiNodeDotJs />,
+        description: "Trabajé bastante en el desarrollo de bots para Discord."
+    },
+    {
+        title: "Material-UI",
+        alt: "Icono MUI",
+        image: <SiMaterialUi />,
+        description: "Este portfolio esta realizado con este framework"
+    },
+    {
+        title: "Bootstrap",
+        alt: "Icono bootstrap",
+        image: <SiBootstrap />,
+        description: "Anteriormente utilizaba bootstrap, migré a MaterialUI porque me es más cómodo"
     }
 ]
 
@@ -99,6 +110,7 @@ const useStyles = makeStyles((theme) => ({
         width: "auto",
         color: theme.palette.secondary.main,
         fontSize: "10rem",
+        textAlign: "center",
         [theme.breakpoints.down('md')]: {
             fontSize: "6rem",
         },
@@ -113,8 +125,8 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     "@keyframes shine": {
-        "from to": { filter: "invert(72%) sepia(99%) saturate(1551%) hue-rotate(86deg) brightness(100%) contrast(88%)" },
-        "50%": { filter: "invert(59%) sepia(63%) saturate(426%) hue-rotate(101deg) brightness(113%) contrast(108%)" }
+        "from to": { color: theme.palette.secondary.light },
+        "50%": { color: theme.palette.secondary.dark }
     },
 }))
 
@@ -157,14 +169,13 @@ export default function Knowledge() {
                             {obj.image}
                         </div>
                         <Typography className={classes.title}>{obj.title}</Typography>
-                        {obj.stars}
                         <Typography className={classes.body}>{obj.description}</Typography>
                     </div>
                 </Zoom>
             </Modal>
         )
     }
-
+//falta centrar imagen en la modal
     function IconGallery() {
         return (
             <Grid container direction="row" alignItems="flex-start" justifyContent="flex-start" spacing={3}>
