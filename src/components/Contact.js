@@ -1,27 +1,29 @@
-import { Avatar, List, ListItem, ListItemAvatar, ListItemText, makeStyles } from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
 import React from 'react'
-import { SiCodewars, SiGithub, SiGmail, SiLinkedin } from 'react-icons/si';
+import { SiCodewars, SiDiscord, SiGithub, SiGmail, SiLinkedin } from 'react-icons/si';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         height: '100vh',
-        flexDirection: 'column',
         [theme.breakpoints.up('sm')]: {
             marginLeft: "5rem",
-        }
+        },
     },
-    list:{
-        alignItems: "center",
-        justifyContent: 'flex-start',
-    },
-    text: {
-        color: theme.palette.secondary.main,
-        textDecoration: 'none',
+    center: {
+        textAlign: "center",
     },
     icon: {
-        backgroundColor: theme.palette.secondary.main,
+        fontSize: "3rem",
+        color: theme.palette.secondary.main,
+        textDecoration: "none"
     },
+    image: {
+        padding: '2vw',
+        width: "auto",
+        maxHeight: "60rem",
+        borderRadius: "50% 50%",
+    }
 }))
 
 const socialMedia = [
@@ -44,6 +46,11 @@ const socialMedia = [
         name: 'Mail',
         logo: <SiGmail />,
         url: 'mailto:wencitera@gmail.com'
+    },
+    {
+        name: 'Discord',
+        logo: <SiDiscord />,
+        url: 'https://discordapp.com/users/303695993462063106/',
     }
 ]
 
@@ -51,21 +58,13 @@ export default function Contact() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <List className={classes.root}>
-                {
-                    socialMedia.map((social, index) =>
-                        <ListItem key={index} className={classes.list}>
-                            <a className={classes.text} href={social.url}>
-                            <ListItemAvatar>
-                                <Avatar className={classes.icon}>
-                                    {social.logo}
-                                </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText primary={social.name} /></a>
-                        </ListItem>
-                    )
-                }
-            </List>
+            <Grid container direction="row" justifyContent="center" alignItems="center">
+                {socialMedia.map((item, index) => (
+                    <Grid key={index} item xs className={classes.center}>
+                        <a className={classes.icon} href={item.url} target="_blank" rel="noreferrer">{item.logo}</a>
+                    </Grid>
+                ))}
+            </Grid>
         </div>
     )
 }
