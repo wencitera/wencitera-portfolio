@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     title:{
-        fontFamily: 'Open-sans, sans-serif',
+        fontFamily: 'Quicksand, sans-serif',
         color: theme.palette.secondary.main,
         [theme.breakpoints.up('md')]: {
             fontSize: "6rem",

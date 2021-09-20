@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     title: {
         color: theme.palette.secondary.main,
         fontSize: "5rem",
+        
         [theme.breakpoints.down('md')]: {
             fontSize: "1.8rem",
             textAlign: "center"
@@ -60,7 +61,6 @@ export default function AboutMe() {
                                 realizando la abstracción de la realidad, planteando una planificación para luego resolver el problema. <br/>
                                 Me siento más cómodo desarrollando back-end,fuerte del lado de la lógica y estoy instruyendome de forma autodidacta del lado del front-end
                                 ya que creo no tener una facilidad para comprender la ergonomía del usuario pero aún así me esfuerzo a diario para poder considerarme full-stack.<br/>
-                               
                             </Typography>
                         </Grid>
                     </Grid>
