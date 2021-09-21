@@ -13,18 +13,14 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: theme.palette.secondary.main,
     fontFamily: 'Azeret Mono, monospace',
-    fontSize: "1.5rem",
+    fontSize: "1.3rem",
     [theme.breakpoints.up('sm')]:{
-      fontSize: "3rem",
+      fontSize: "2.2rem",
     }
   },
   link: {
     color: theme.palette.secondary.main,
     textDecoration: 'none',
-    fontSize: "1.5rem",
-    [theme.breakpoints.up('sm')]:{
-      fontSize: "3rem",
-    }
   },
   icon: {
     verticalAlign: 'text-bottom'
