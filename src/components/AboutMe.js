@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     textbody: {
-        maxWidth: 1200,
+        maxWidth: 900,
         color: theme.palette.secondary.light,
         fontSize: "1.3rem",
         textAlign: "justify",
@@ -54,11 +54,11 @@ export default function AboutMe() {
                         </Grid>
                         <Grid item xs>
                             <Typography className={classes.textbody}>
-                                Bienvenido a mi porftolio, mi nombre es Wenceslao y soy desarrollador back-end y front-end.<br/>
+                                Bienvenido a mi portafolio, mi nombre es Wenceslao y soy desarrollador back-end y front-end.<br/>
                                 Me apasiona mucho la programación ya que a mi parecer hoy en día todos podemos programar pero nos diferenciamos
                                 en la calidad de nuestro código, entendiendo cómo funciona, respetando las bases de la Programacion Orientada a Objetos, 
                                 realizando la abstracción de la realidad, planteando una planificación para luego resolver el problema. <br/>
-                                Me siento más cómodo desarrollando back-end,fuerte del lado de la lógica y estoy instruyendome de forma autodidacta del lado del front-end
+                                Me siento más cómodo desarrollando back-end, fuerte del lado de la lógica y estoy instruyendome de forma autodidacta del lado del front-end
                                 ya que creo no tener una facilidad para comprender la ergonomía del usuario pero aún así me esfuerzo a diario para poder considerarme full-stack.<br/>
                             </Typography>
                         </Grid>
