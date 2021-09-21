@@ -80,7 +80,7 @@ export default function Contact() {
     return (
         <Grid container direction="column" className={classes.root} justifyContent='center' alignItems="center">
             <Grid item xs className={classes.title_container}>
-                <Typography className={classes.title} variant="h2">Contáctame</Typography>
+                <Typography className={classes.title} variant="h2">Redes sociales</Typography>
             </Grid>
             <Grid item xs>
                 <img className={classes.image} src={ProfileAvatar} alt="Profile avatar" />

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     title: {
         color: theme.palette.secondary.main,
         fontSize: "5rem",
-        
+        fontFamily: 'Azeret Mono, monospace',
         [theme.breakpoints.down('md')]: {
             fontSize: "1.8rem",
             textAlign: "center"
@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
             textAlign: "left",
         },
-        
     },
     image: {
         padding: '2vw',
