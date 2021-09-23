@@ -1,5 +1,7 @@
-import { Backdrop, Grid, makeStyles, Modal, Typography, Zoom } from '@material-ui/core';
+//import { makeStyles } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
+import { makeStyles } from '@mui/styles';
+import { Grid, Backdrop, Modal, Typography, Zoom } from '@mui/material';
 import { SiCsharp, SiJavascript, SiReact, SiCss3, SiHtml5, SiPython, SiNodeDotJs, SiMaterialUi, SiBootstrap } from 'react-icons/si'
 import { HiDatabase } from 'react-icons/hi'
 
@@ -68,12 +70,13 @@ const itemData = [
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "90%",
-        height: "100vh",
+        //width: "100%",
+        height: "100%",
         padding: "1rem",
         marginLeft: "1rem",
         [theme.breakpoints.up('sm')]: {
             marginLeft: "5rem",
+            marginRight: "5rem"
         },
     },
     title: {
@@ -175,12 +178,13 @@ export default function Knowledge() {
             </Modal>
         )
     }
-//falta centrar imagen en la modal
+
     function IconGallery() {
+        
         return (
-            <Grid container direction="row" alignItems="flex-start" justifyContent="flex-start" spacing={3}>
+            <Grid columns={10} container spacing={1} direction="row">
                 {itemData.map((item, index) => (
-                    <Grid key={index} item md={2} sm={4} xs={6}>
+                    <Grid key={index} item md={2} xs={5}>
                         <div onClick={() => handleOpen(index)} className={`${classes.image} ${classes.image_animation}`}>
                             {item.image}
                         </div>
