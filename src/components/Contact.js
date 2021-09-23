@@ -76,7 +76,7 @@ export default function Contact() {
     const classes = useStyles();
     return (
         <div className={`${classes.root} ${classes.center}`}>
-            <Typography className={classes.title} variant="h2">Redes Sociales</Typography>
+            <Typography textAlign="center" className={classes.title} variant="h2">Redes Sociales</Typography>
             <img className={classes.image} src={ProfileAvatar} alt="Profile avatar" />
             <div className={classes.list}>
                 {socialMedia.map((item, index) => (
