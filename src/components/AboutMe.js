@@ -1,4 +1,5 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React from 'react'
 import ProfilePicture from '../assets/IMG_0099.JPG'
 
@@ -9,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
         padding: "1rem",
         alignItems: "center",
         marginLeft: "8rem",
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             marginLeft: "1rem",
         },
     },
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.secondary.main,
         fontSize: "5rem",
         fontFamily: 'Azeret Mono, monospace',
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             fontSize: "1.8rem",
             textAlign: "center"
         },
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.secondary.light,
         fontSize: "1.3rem",
         textAlign: "justify",
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             textAlign: "left",
         },
     },

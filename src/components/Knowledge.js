@@ -1,4 +1,4 @@
-//import { makeStyles } from '@material-ui/core';
+//import { makeStyles } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@mui/styles';
 import { Grid, Backdrop, Modal, Typography, Zoom } from '@mui/material';
@@ -83,14 +83,14 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "center",
         color: theme.palette.secondary.main,
         fontSize: "4rem",
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             fontSize: "1.5rem",
         }
     },
     body: {
         color: theme.palette.secondary.main,
         fontSize: "1.0rem",
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             fontSize: "0.8rem",
         }
     },
@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
         maxWidth: "25vw",
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             maxWidth: "80%",
         }
     },
@@ -114,10 +114,10 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.secondary.main,
         fontSize: "10rem",
         textAlign: "center",
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             fontSize: "6rem",
         },
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             fontSize: "8rem",
         }
     },

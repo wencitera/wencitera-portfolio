@@ -1,11 +1,12 @@
 import React from 'react'
-import { AppBar, IconButton, makeStyles } from '@material-ui/core';
-//import AccountTreeIcon from '@material-ui/icons/AccountTree';
-import WorkIcon from '@material-ui/icons/Work';
-import MailIcon from '@material-ui/icons/Mail';
-import HomeIcon from '@material-ui/icons/Home';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import BookIcon from '@material-ui/icons/Book';
+import { AppBar, IconButton } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+//import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import WorkIcon from '@mui/icons-material/Work';
+import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import BookIcon from '@mui/icons-material/Book';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -45,24 +46,24 @@ export default function NavBar() {
             }}
             className={classes.appBar}
         >
-            <IconButton href='/' label="Inicio" className={classes.button}>
+            <IconButton href='/' label="Inicio" className={classes.button} size="large">
                 <HomeIcon fontSize="large" />
             </IconButton>
-            <IconButton href='/sobremi' className={classes.button}>
+            <IconButton href='/sobremi' className={classes.button} size="large">
                 <AccountBoxIcon fontSize="large" />
             </IconButton>
-            <IconButton href='/conocimientos' className={classes.button}>
+            <IconButton href='/conocimientos' className={classes.button} size="large">
                 <BookIcon fontSize="large" />
             </IconButton>
             {/*<IconButton href='/proyectos' className={classes.button}>
                 <AccountTreeIcon fontSize="large" />
         </IconButton>*/}
-            <IconButton href='/experiencia' className={classes.button}>
+            <IconButton href='/experiencia' className={classes.button} size="large">
                 <WorkIcon fontSize="large" />
             </IconButton>
-            <IconButton href='/contacto' className={classes.button}>
+            <IconButton href='/contacto' className={classes.button} size="large">
                 <MailIcon fontSize="large" />
             </IconButton>      
         </AppBar>
-    )
+    );
 }
