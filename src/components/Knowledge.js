@@ -71,7 +71,7 @@ const itemData = [
 const useStyles = makeStyles((theme) => ({
     root: {
         //width: "100%",
-        height: "100%",
+        height: "100vh",
         padding: "1rem",
         marginLeft: "1rem",
         [theme.breakpoints.up('sm')]: {
@@ -196,7 +196,7 @@ export default function Knowledge() {
     }
 
     return (
-        <div className={classes.root}>
+        <div className={`${classes.root} ${classes.modal}`}>
             <IconGallery />
         </div>
     )
