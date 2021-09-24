@@ -3,11 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { CssBaseline, LinearProgress, ThemeProvider, StyledEngineProvider } from '@mui/material';
 import { theme } from './static/Theme';
 import NavBar from './components/NavBar';
-//import Home from './components/Home';
-//import AboutMe from './components/AboutMe';
-//import Experience from './components/Experience';
-//import Contact from './components/Contact';
-//import Knowledge from './components/Knowledge';
 import { lazy, Suspense } from 'react';
 const Home = lazy(() => import('./components/Home'))
 const AboutMe = lazy(() => import('./components/AboutMe'))
