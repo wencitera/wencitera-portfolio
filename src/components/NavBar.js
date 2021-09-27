@@ -1,7 +1,6 @@
 import React from 'react'
 import { AppBar, IconButton } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-//import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import WorkIcon from '@mui/icons-material/Work';
 import MailIcon from '@mui/icons-material/Mail';
 import HomeIcon from '@mui/icons-material/Home';
@@ -21,11 +20,11 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: 'none',
         backgroundColor: theme.palette.primary.dark,
         [theme.breakpoints.up("md")]: {
-            display: "flex",
             flexDirection: "column",
             height: "100vh",
             width: 50,
-            left: 0
+            left: 0,
+            paddingTop: 0,
         }
     },
     button: {
@@ -36,15 +35,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar() {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
 
     return (
         <AppBar
-            value={value}
-            onChange={(event, newValue) => {
-                setValue(newValue);
-            }}
             className={classes.appBar}
+            position="fixed"
         >
             <IconButton href='/' label="Inicio" className={classes.button} size="large">
                 <HomeIcon fontSize="large" />
@@ -55,9 +50,6 @@ export default function NavBar() {
             <IconButton href='/conocimientos' className={classes.button} size="large">
                 <BookIcon fontSize="large" />
             </IconButton>
-            {/*<IconButton href='/proyectos' className={classes.button}>
-                <AccountTreeIcon fontSize="large" />
-        </IconButton>*/}
             <IconButton href='/experiencia' className={classes.button} size="large">
                 <WorkIcon fontSize="large" />
             </IconButton>

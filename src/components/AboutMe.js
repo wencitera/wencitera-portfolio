@@ -28,8 +28,10 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.secondary.light,
         fontSize: "1.3rem",
         textAlign: "justify",
+        marginBottom: "70px",
         [theme.breakpoints.down('lg')]: {
-            textAlign: "left",
+            fontSize: "1rem",
+            textAlign: "justify",
         },
     },
     image: {
@@ -49,7 +51,7 @@ export default function AboutMe() {
                     <img className={classes.image} src={ProfilePicture} alt="W. A. Citera"/>
                 </Grid>
                 <Grid item md xs>
-                    <Grid container direction="column" noWrap>
+                    <Grid container direction="column">
                         <Grid item xs>
                             <Typography className={classes.title}><b>Wenceslao Ariel Citera</b></Typography>
                         </Grid>

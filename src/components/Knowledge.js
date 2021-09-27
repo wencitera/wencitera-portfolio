@@ -70,13 +70,16 @@ const itemData = [
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        //width: "100%",
-        height: "100vh",
-        padding: "1rem",
-        marginLeft: "1rem",
+        margin: 0,
+        padding: 0,
         [theme.breakpoints.up('sm')]: {
-            marginLeft: "5rem",
-            marginRight: "5rem"
+            height: "100vh"
+        },
+    },
+    spacer: {
+        marginBottom: "45px",
+        [theme.breakpoints.up('sm')]: {
+            marginBottom: "0"
         },
     },
     title: {
@@ -180,7 +183,7 @@ export default function Knowledge() {
     }
 
     function IconGallery() {
-        
+
         return (
             <Grid columns={10} container spacing={1} direction="row">
                 {itemData.map((item, index) => (
@@ -196,9 +199,12 @@ export default function Knowledge() {
     }
 
     return (
-        <div className={`${classes.root} ${classes.modal}`}>
-            <IconGallery />
-        </div>
+        <>
+            <div className={`${classes.root} ${classes.modal}`}>
+                <IconGallery />
+            </div>
+            <div className={classes.spacer}></div>
+        </>
     )
 }
 
